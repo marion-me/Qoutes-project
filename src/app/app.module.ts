@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { QouteComponent } from './qoute/qoute.component';
 import { highlightDirective } from './highlight.directive';
+import { DateCountPipe } from './date-count.pipe';
+import { QouteDetailComponent } from './qoute-detail/qoute-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QouteComponent,
-    highlightDirective
+    highlightDirective,
+    DateCountPipe,
+    QouteDetailComponent
   ],
   imports: [
     BrowserModule
