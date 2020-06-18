@@ -7,8 +7,8 @@
         <li apphighlight>{{Upvotes}}</li>
         <button  (click)='toggleDetails(i)'>Toggle Details</button>
 
-    <app-qoute-details *ngIf="Qoute.showDescription" [qoute]='Qoute' (isComplete)= 'completeQoute($event,i)'></app-goal-details>
-    
+    <app-qoute-details *ngIf="Qoute.showDescription" [qoute]='Qoute' (isComplete)= 'completeQoute($event,i)'></app-qoute-details>
+        <app-qoute-detail *ngIf='qoute.showDescription' [qoute]='Qoute' (isComplete) = 'deleteGoal($event,i)'></app-qoute-detail>
     </div>
 </ul>
 <p *ngIf='qoute.length > 5'></p>

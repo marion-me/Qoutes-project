@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-qoute-detail',
-  templateUrl: './qoute-detail.component.html',
-  styleUrls: ['./qoute-detail.component.css']
-})
-export class QouteDetailComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class qoutDetailComponent implements OnInit {
+    ngOnInit(): void {
+      throw new Error("Method not implemented.");
+    }
+    isComplete: any;
+  
+    goalDelete(complete:boolean){
+      this.isComplete.emit(complete);
+    }
   }
-
-}
