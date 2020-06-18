@@ -1,15 +1,31 @@
-<div class="card-body">
-    <h5 class="card-title">Qoute</h5>
-    <button class="btn btn-success"(click)="upvoteButtonClick()">Upvotes</button>
-    <button class="btn btn-danger"(click)="downvoteButtonClick()">downvotes</button>
-<ul>
-    <div *ngFor='let qoute of Qoute;let i = index'>
-        <li apphighlight>{{Upvotes}}</li>
-        <button  (click)='toggleDetails(i)'>Toggle Details</button>
-
-    <app-qoute-details *ngIf="Qoute.showDescription" [qoute]='Qoute' (isComplete)= 'completeQoute($event,i)'></app-qoute-details>
-        <app-qoute-detail *ngIf='qoute.showDescription' [qoute]='Qoute' (isComplete) = 'deleteGoal($event,i)'></app-qoute-detail>
+<div class="container">
+    <h1>Qoute</h1>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let Qoute of qoute;let i = index'>
+          <div>
+            <h6 id={{i}} apphighlight>{{upvotes}} due on {qoute.completeDate|date|uppercase}}</h6>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Qoute</h5>
+            <button class="btn btn-success"(click)="upvoteButtonClick()">Upvotes</button>
+            <button class="btn btn-danger"(click)="downvoteButtonClick()">downvotes</button>
+        <ul>
+            <div *ngFor='let qoute of Qoute;let i = index'>
+                <li apphighlight>{{Upvotes}}</li>
+                <button  (click)='toggleDetails(i)'>Toggle Details</button>
+  
+          <div *ngIf='qoute.showDescription'>
+            <app-qoute-detail  [qoute]='qoute' (isComplete) = 'deleteGoal($event,i)'></app-qoute-detail>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <app-qoute-form></app-qoute-form>
+      </div>
     </div>
-</ul>
-<p *ngIf='qoute.length > 5'></p>
-</div>
+    <p *ngIf='qoute.length > 5'></p>
+  </div>

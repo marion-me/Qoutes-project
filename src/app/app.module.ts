@@ -6,6 +6,8 @@ import { QouteComponent } from './qoute/qoute.component';
 import { highlightDirective } from './highlight.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { qoutDetailComponent } from './qoute-detail/qoute-detail.component';
+import { QouteFormComponent } from './qoute-form/qoute-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { qoutDetailComponent } from './qoute-detail/qoute-detail.component';
     QouteComponent,
     highlightDirective,
     DateCountPipe,
-    qoutDetailComponent
+    qoutDetailComponent,
+    QouteFormComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
