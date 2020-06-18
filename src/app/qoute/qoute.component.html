@@ -2,4 +2,14 @@
     <h5 class="card-title">Qoute</h5>
     <button class="btn btn-success"(click)="upvoteButtonClick()">Upvotes</button>
     <button class="btn btn-danger"(click)="downvoteButtonClick()">downvotes</button>
+<ul>
+    <div *ngFor='let qoute of Qoute;let i = index'>
+        <li apphighlight>{{Upvotes}}</li>
+        <button  (click)='toggleDetails(i)'>Toggle Details</button>
+
+    <app-qoute-details *ngIf="Qoute.showDescription" [qoute]='Qoute' (isComplete)= 'completeQoute($event,i)'></app-goal-details>
+    
+    </div>
+</ul>
+<p *ngIf='qoute.length > 5'></p>
 </div>
